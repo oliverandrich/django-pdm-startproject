@@ -28,12 +28,12 @@ repos:
           - black==22.10.0
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.254"
+    rev: "v0.0.257"
     hooks:
       - id: ruff
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.297
+    rev: v1.1.299
     hooks:
       - id: pyright
 
@@ -44,7 +44,7 @@ repos:
         args: [--target-version, "4.1"]
 
   - repo: https://github.com/rtts/djhtml
-    rev: 3.0.4
+    rev: 3.0.6
     hooks:
       - id: djhtml
         args:

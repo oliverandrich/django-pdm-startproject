@@ -1,8 +1,12 @@
 # django-poetry-startproject
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge)](https://github.com/psf/black)
+![GitHub](https://img.shields.io/github/license/oliverandrich/django-pdm-startproject?style=for-the-badge)
+[![pdm-managed](https://img.shields.io/badge/pdm-managed-blueviolet?style=for-the-badge)](https://pdm.fming.dev)
+
 ![Screenshot of the landing page](docs/landingpage.png)
 
-> Django startproject template with some poetry.
+> Django startproject template using pdm as package and dependency manager.
 
 I took the inspiration from Jeff Triplett's [django-startproject](https://github.com/jefftriplett/django-startproject) and created my own starter for a fresh django project. It includes even more batteries than Jeff's. 🤷‍♂️
 
@@ -50,23 +54,23 @@ echo "DJANGO_DEBUG=True" >> .env
 echo "SECRET_KEY=notsosecret" >> .env
 
 # Install dependencies
-poetry install
+pdm install
 
 # Migrate database
-poetry run ./manage.py migrate
+pdm run manage.py migrate
 
 # Start tailwind server
-poetry run ./manage.py tailwind watch
+pdm run manage.py tailwind watch
 
 # Start dev server
-poetry run ./manage.py runserver
+pdm run manage.py runserver
 ```
 
 ### Add Postgres support
 
 ```shell
 cd example_project
-poetry add psycopg2-binary
+pdm add psycopg2-binary
 ```
 
 Set the environment variable DATABASE_URL to [something reasonable](https://django-environ.readthedocs.io/en/latest/types.html#environ-env-db-url)
@@ -75,7 +79,7 @@ Set the environment variable DATABASE_URL to [something reasonable](https://djan
 
 ```shell
 cd example_project
-poetry add django-mysql
+pdm add django-mysql
 ```
 
 Follow the [installation instructions](https://django-mysql.readthedocs.io/en/latest/installation.html#id1) of `django-mysql` and set the environment variable DATABASE_URL to [something reasonable](https://django-environ.readthedocs.io/en/latest/types.html#environ-env-db-url)
